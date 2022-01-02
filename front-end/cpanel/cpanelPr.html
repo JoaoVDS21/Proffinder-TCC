@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel - Professor | Proffinder </title>
+    <link rel="stylesheet" href="../css/cpanelPr.css">
+    <link rel="stylesheet" href="../css/chat.css">
+    <link rel="stylesheet" href="../css/editPerfil.css">
+    <link rel="stylesheet" href="../css/cardArea.css">
+    <link rel="stylesheet" href="../css/boxViewArea.css">
+    <link rel="stylesheet" href="../css/responsivePanel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        
+        <div class="loading"></div>
+        <header class="header">
+            <div class="logo-text">
+                <h1>Proffinder </h1>
+                <span> - Professores capacitados</span>
+            </div>
+            <div class="navbar">
+                <a href="#" class="active" data-main="home">PAINEL</a>
+                <a href="../index.html" id="itemLogout" data-main="home">LOGOUT</a>
+            </div>
+        </header>
+        <main class="main">
+            <div class="box-painel">
+                <div class="navbar-profile">
+                    <div class="profile-info">
+                        <div class="profile-photo">
+                            <img src="../img/indexSobre/male.png" alt="">
+                        </div>
+                        <h3 id="titleProfilePanel">Olá, **Nome do Professor**</h3>
+                    </div>
+                    <div class="box-navbar-items">
+                        <div class="navbar-item" data-nav="mensagens">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="34" height="34" viewBox="0 0 34 34">
+                                <image id="chat_1_" data-name="chat (1)" width="34" height="34" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAADtElEQVRYhe2XX0hTURzHz7lnzuX0xbBBNqeGD/4rVPDRB0FRMudDBEEP0XP02lPhUw9REL5EUhFEWNdBZlyWTvw3QcnEbTj8s7liOobinOGmXu92T5yrd63dezf/bPbSB842zu+3c778zu/3u+cCjDEwmUz6+fn5hf39fR6nGbLm4uKi22Qy6cheSkP42Nzc3Eu3gEQCgcAeTdP5SkJUs7OzYzU1NdkAAOBwOKbX19e/YIwjIA0ghLIKCgqM1dXVtfn5+dmlpaUfAQBNsitzHCccx8LCgitZ6E4zXC7XT7IHy7K80jqUSqWCRJDP53ufjijIsbq62kOm1Wo1lDELUOIPnuejmRKChWxMjkrJyjBMc1VV1TuEEPFJudAhkOf5iM1mu9ne3j4msSZBUUhJSckzg8FwQWI4Atvb210AgKtpEbK0tHRXpVJ9oCgKSYxJwBhH3W737crKSkWn6enpr1qt9pLP5+tuamrqEibFcrdYLA8zVTXDw8OPxX36+vpKef5P3/R6vRs0TSPFiPT29qr1en0PQkhLclniQBICQrSzs+NqaGi4JzEqYDQaPaScCwsL9Tk5OUiv15/f3d1dVIzI3NycXdIeFbBYLA/kIiEXkfh5p9M5Ryai0ShWjMja2tqnoqKicgihYu0TWJblQqHQsMRwBCoqKqpIdlAUpZysjY2NnQCATokhgdzcXNDR0SGZPy7UqVdIE/+FJHImQvLy8urAwfNMYhPJuBCz2Wysra1tJr+9Xq9f4nCIYtVMTEy8qquru4MQOrFYUvmtra1C+UejUWCz2a4XFxdL/ATkGprD4fgu37pORigUigwODt6Xa3biglC8KwwNDT0KBoNP6+vrfxgMBh2Z29ra2rfb7S8ghNkQwmNHBmPMsyw7H3uwyYP/isjIyMiTYDAYu0R7PB6fjPpMjFjfF4h/Is7MzIyIG5LXALfb7bVarW/ORIj48BkdHX0e7zg1NfUZH5wzl+rd5DRCYlXDcRweGBi41tbWZk7IfMGHoiiS/WrZU04DlNVq7V5eXl5lGKYiUQQhHA7bybdGo0EajeZKpoTAI1ywhXefrKwsGIlEsNPp/MaybCDV9UAOcpHa2Nh429LS0hNnjlVNymE2m2/FJ/NpIOtMTk72yvURGe1S+vv7G8vLy1/rdLqLFLnJHBOyDzleElnyT5fL5SkrK7t8rIika9A0fc7v9/8So7CyshKQ3B/PUAyy2+3fEk9X4nhWY3x8/CXpW/9cCBkMw9wIh8MRjuP43+ps+VVC7VC7AAAAAElFTkSuQmCC"/>
+                            </svg>
+
+                            <p>Mensagens</p>
+                        </div>
+                        <div class="navbar-item" data-nav="areasCadastradas">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="31" viewBox="0 0 35 31">
+                                <image id="portfolio" width="35" height="31" xlink:href="data:img/png;base64,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"/>
+                            </svg>
+                      
+                            <p>Áreas cadastradas</p>
+                        </div>
+ 
+                              
+                        <div class="navbar-item" data-nav="editarPerfil">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="38" height="38" viewBox="0 0 38 38">
+                                <image id="resume" width="38" height="38" xlink:href="data:img/png;base64,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"/>
+                            </svg>
+                              
+                            <p>Editar Perfil</p>
+                        </div>
+                        <div class="navbar-item" data-nav="cadastrarArea">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="41" height="41" viewBox="0 0 41 41">
+                                <image id="contract" width="41" height="41" xlink:href="data:img/png;base64,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"/>
+                            </svg>
+                              
+                            <p>Cadastrar área</p>
+                        </div>
+
+                        <a href="../index.html" class="navbar-item" id="btnLogout">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="29" height="31" viewBox="0 0 29 31">
+                                <image id="logout" width="29" height="31" xlink:href="data:img/png;base64,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"/>
+                            </svg>
+
+                            <p>Encerrar Sessão</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="box-screens">
+                    
+                    <div class="screens">
+                        <div class="screen" id="mensagens">
+                            <h2 class="title-screen">MENSAGENS</h2>
+                            <div class="container-screen">
+                                <div class="box-contatos-side" id="boxContatosSide">
+                                    <div class="contato-item">
+                                        <div class="photo">
+                                            <img src="../img/indexSobre/male.png">
+                                        </div>
+                                        <div class="contato-info">
+                                            <h4>Nome do aluno</h4>
+                                        </div>
+                                    </div>
+                                    <div class="contato-item">
+                                        <div class="photo">
+                                            <img src="../img/indexSobre/male.png">
+                                        </div>
+                                        <div class="contato-info">
+                                            <h4>Nome do aluno</h4>
+                                        </div>
+                                    </div>
+                                    <div class="contato-item">
+                                        <div class="photo">
+                                            <img src="../img/indexSobre/male.png">
+                                        </div>
+                                        <div class="contato-info">
+                                            <h4>Nome do aluno</h4>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="box-chat">
+                                    <div class="about-contato">
+                                        <img src="../img/indexSobre/male.png" class="about-perfil-img" alt="">
+                                        <h3>Nome do aluno</h3>
+                                    </div>
+                                    <div class="chat">
+                                        <div class="mensagem-de">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur ut id, corporis suscipit temporibus cum, explicabo velit vero reiciendis dicta iusto quibusdam officia totam culpa ratione esse, commodi ullam placeat?</div>
+                                        <div class="mensagem-de">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur ut id, corporis suscipit temporibus cum, explicabo velit vero reiciendis dicta iusto quibusdam officia totam culpa ratione esse, commodi ullam placeat?</div>
+                                        <div class="mensagem-para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur ut id, corporis suscipit temporibus cum, explicabo velit vero reiciendis dicta iusto quibusdam officia totam culpa ratione esse, commodi ullam placeat?</div>
+                                    </div>
+                                    <form action="#" method="post" id="formChat" enctype="multipart/form-data">
+                                        <input type="number" name="idContato" hidden>
+                                        <input type="text" name="msg" id="msg" placeholder="Digite sua mensagem aqui..." autocomplete="off">
+                                        <button type="submit">
+                                            <i class="fab fa-telegram-plane"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="screen" id="areasCadastradas">
+                            <h2 class="title-screen">ÁREAS PROFISSIONAIS CADASTRADAS</h2>
+                            <div class="box-areas">
+                                <div class="card-area" data-delete="${area['id_area']}">
+                                    <div class="box-overlay-cat" onclick="">
+                                        <img src="../img/areas/${area['imgArea']}">
+                                        <span>Matemática <p>Remoto</p></span>
+                                        
+                                    </div>
+                                    <div class="box-card-area">
+                                        <div class="box-img-profile">
+                                        </div>
+                                        <div class="box-info-area">
+                                            <h3>${area['titulo']}</h3>
+                                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. consectetur adipisicing elit.</p>
+                                        </div>
+                                        <div class="box-access">
+                                            <a href="javascript: editArea(${area['id_area']})">EDITAR</a>
+                                            <a href="javascript: deleteArea(${area['id_area']})" class="btn-excluir">EXCLUIR</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-area" data-delete="${area['id_area']}">
+                                    <div class="box-overlay-cat" onclick="">
+                                        <img src="../img/areas/${area['imgArea']}">
+                                        <span>Matemática <p>Remoto</p></span>
+                                        
+                                    </div>
+                                    <div class="box-card-area">
+                                        <div class="box-img-profile">
+                                        </div>
+                                        <div class="box-info-area">
+                                            <h3>${area['titulo']}</h3>
+                                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. consectetur adipisicing elit.</p>
+                                        </div>
+                                        <div class="box-access">
+                                            <a href="javascript: editArea(${area['id_area']})">EDITAR</a>
+                                            <a href="javascript: deleteArea(${area['id_area']})" class="btn-excluir">EXCLUIR</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-area" data-delete="${area['id_area']}">
+                                    <div class="box-overlay-cat" onclick="">
+                                        <img src="../img/areas/${area['imgArea']}">
+                                        <span>Matemática <p>Remoto</p></span>
+                                        
+                                    </div>
+                                    <div class="box-card-area">
+                                        <div class="box-img-profile">
+                                        </div>
+                                        <div class="box-info-area">
+                                            <h3>${area['titulo']}</h3>
+                                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. consectetur adipisicing elit.</p>
+                                        </div>
+                                        <div class="box-access">
+                                            <a href="javascript: editArea(${area['id_area']})">EDITAR</a>
+                                            <a href="javascript: deleteArea(${area['id_area']})" class="btn-excluir">EXCLUIR</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-area" data-delete="${area['id_area']}">
+                                    <div class="box-overlay-cat" onclick="">
+                                        <img src="../img/areas/${area['imgArea']}">
+                                        <span>Matemática <p>Remoto</p></span>
+                                        
+                                    </div>
+                                    <div class="box-card-area">
+                                        <div class="box-img-profile">
+                                        </div>
+                                        <div class="box-info-area">
+                                            <h3>${area['titulo']}</h3>
+                                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. consectetur adipisicing elit.</p>
+                                        </div>
+                                        <div class="box-access">
+                                            <a href="javascript: editArea(${area['id_area']})">EDITAR</a>
+                                            <a href="javascript: deleteArea(${area['id_area']})" class="btn-excluir">EXCLUIR</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                        <div class="screen" id="editarPerfil">
+                            <h2 class="title-screen">EDITAR PERFIL</h2>
+                            <div class="box-content-editar">
+                                <div class="background-top-bar">
+                                    <img src="../img/indexSobre/male.png" id="imgProfileEdit" alt="">
+                                    Nome: <input type="text" name="nome" id="nameScreenEditPerfil" value="João Victor Domingues da Silva">
+                                    <span>**OBS: CLIQUE EM CIMA DO NOME PARA EDITÁ-LO**</span>
+                                </div>
+                                <div class="box-info" >
+                                    <form action="#" method="post" id="screenEditPerfil" enctype="multipart/form-data">
+                                        <div class="input-group">
+                                            <label for="imgPerfil">Foto :</label>
+                                            <input type="file" name="imgPerfil" id="imgPerfil">
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="email">Email:</label>
+                                            <input type="text" name="email" id="email">
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="senha">Senha: <span style="font-size: .7rem; color: #777">Não é possível alterar</span></label>
+                                            <input type="text" name="senha" id="senha" disabled>
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="cep">CEP:</label>
+                                            <input type="text" name="cep" id="cep">
+                                        </div>
+                                        <div class="input-group-logradouro">
+                                            <div class="input-group" id="gp-logradouro">
+                                                <label for="logradouro">Logradouro:</label>
+                                                <input type="text" name="logradouro" id="logradouro">
+                                            </div>
+                                            <div class="input-group" id="gp-numLogradouro">
+                                                <label for="numLogradouro">Nº:</label>
+                                                <input type="number" name="numLogradouro" id="numLogradouro">
+                                            </div>
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="bairro">Bairro:</label>
+                                            <input type="text" name="bairro" id="bairro">
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="cidade">Cidade:</label>
+                                            <input type="text" name="cidade" id="cidade">
+                                        </div>
+
+                                        <input type="submit" value="Salvar">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="screen" id="cadastrarArea">
+                            <h2 class="title-screen">CADASTRAR ÁREA</h2>
+                            <div class="box-content-editar">
+                                <div class="background-top-bar">
+                                    <img src="../img/areas/default.png" alt="" id="divImgArea">
+                                    <label for="title">Título: </label> <input type="text" name="title" id="title" placeholder="Insira o título aqui">
+                                    <!-- <span>**OBS: CLIQUE EM CIMA DO TÍTULO PARA ADICIONÁ-LO**</span> -->
+                                </div>
+                                <div class="box-info">
+                                    <form action="#" method="POST" id="formCadastrarArea" enctype="multipart/form-data">
+                                        <div class="input-group">
+                                            <label for="imgArea">Foto :</label>
+                                            <input type="file" name="imgArea" id="imgArea">
+                                        </div>
+                                        <div class="input-group" id="inputsRadio">
+                                            <label for="tipoEstudo">Tipo do estudo:</label>
+                                            <div class="input-radio">
+                                                <input type="radio" name="tipoEstudo" id="ambos" value="ambos"><label for="ambos">Ambos</label>
+                                            </div>    
+                                            <div class="input-radio">
+                                                <input type="radio" name="tipoEstudo" id="presencial" value="presencial"><label for="presencial">Presencial</label>
+                                            </div>
+                                            <div class="input-radio">
+                                                <input type="radio" name="tipoEstudo" id="remoto" value="remoto"><label for="remoto">Remoto</label>
+                                            </div>
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="categoria">Categoria:</label>
+                                            <select name="categoria" id="categoria">
+                                                <option value="default"> Escolha a categoria desejada</option>
+                                                <option value="-1">Outro</option>
+                                            </select>
+                                        </div>
+                                        <div class="input-group" id="otherCat" style="display: none">
+                                            <label for="ocategoria">Digite a categoria:</label>
+                                            <input type="text" name="ocategoria" id="ocategoria">
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="descricao">Descrição:</label>
+                                            <textarea name="descricao"></textarea>
+                                        </div>
+                                        
+                                        <input type="submit" value="Cadastrar">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+        <div class="modalViewArea hide" id="modalViewArea">
+            <div class="box-modalViewArea">
+                <div class="top-bar-info">
+                    <div class="info-title-area">
+                        <h2 id="viewTitleArea">Titulo da Area</h2>
+                    </div>
+                    <div class="info-img-area">
+                        <img src="../img/indexSobre/female.png" alt="" id="viewImgArea">
+                    </div>
+                    <div class="info-professor">
+                        <img src="../img/indexSobre/male.png" alt="">
+                        <a href="../profile-info.html">João Victor Domingues</a>
+                    </div>
+                    <span id="closeModalViewArea">Fechar</span>
+                </div>
+                <div class="box-info-view-area">
+                    <form action="#" method="POST" id="formViewArea" enctype="multipart/form-data">
+                        <input type="number" name="idArea" hidden readonly>
+                        <div class="input-group" >
+                            <label for="vTipoEstudo">Tipo do estudo:</label>
+                            <input type="text" name="vTipoEstudo" id="vTipoEstudo" readonly>
+                        </div>
+                        <div class="input-group">
+                            <label for="vCategoria">Categoria:</label>
+                            <input type="text" name="vCategoria" id="vCategoria" readonly>
+
+                        </div>
+                        <div class="input-group">
+                            <label for="vDescricao">Descrição:</label>
+                            <div id="vDescricao"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modalEditArea hide" id="modalEditArea">
+            <div class="box-modalEditArea">
+                <div class="background-top-bar">
+                    <img src="../img/areas/default.png" alt="" id="divImgAlterarArea">
+                    <label for="aTitle">Título: </label> <input type="text" name="title" id="aTitle" placeholder="Insira o título aqui">
+                    <!-- <span>**OBS: CLIQUE EM CIMA DO TÍTULO PARA ADICIONÁ-LO**</span> -->
+                    <span id="closeModalEditArea">Fechar</span>
+                </div>
+                <div class="box-info">
+                    <form action="#" method="POST" id="formAlterarArea" enctype="multipart/form-data">
+                        <input type="number" name="idAlterarArea" hidden>
+                        <div class="input-group">
+                            <label for="aImgArea">Foto :</label>
+                            <input type="file" name="aImgArea" id="aImgArea">
+                        </div>
+                        <div class="input-group" id="inputsRadio">
+                            <label for="aTipoEstudo">Tipo do estudo:</label>
+                            <div class="input-radio">
+                                <input type="radio" name="aTipoEstudo" id="aAmbos" value="ambos"><label for="aAmbos">Ambos</label>
+                            </div>    
+                            <div class="input-radio">
+                                <input type="radio" name="aTipoEstudo" id="aPresencial" value="presencial"><label for="aPresencial">Presencial</label>
+                            </div>
+                            <div class="input-radio">
+                                <input type="radio" name="aTipoEstudo" id="aRemoto" value="remoto"><label for="aRemoto">Remoto</label>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="aCategoria">Categoria:</label>
+                            <select name="aCategoria" id="aCategoria">
+                                <option value="default"> Escolha a categoria desejada</option>
+                                <option value="-1">Outro</option>
+                            </select>
+                        </div>
+                        <div class="input-group" id="aOtherCat" style="display: none">
+                            <label for="aOcategoria">Digite a categoria:</label>
+                            <input type="text" name="aOcategoria" id="aOcategoria">
+                        </div>
+                        <div class="input-group">
+                            <label for="aDescricao">Descrição:</label>
+                            <textarea name="aDescricao"></textarea>
+                        </div>
+                        
+                        <input type="submit" value="Salvar">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/controller/ajax.js"></script>
+    <script src="../js/controller/usuario.js"></script>
+    <script src="../js/modalViewArea.js"></script>
+    <script src="../js/chat.js"></script>
+    <script src="../js/panelPr.js"></script>
+</body>
+</html>

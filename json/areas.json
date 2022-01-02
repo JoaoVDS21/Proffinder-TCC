@@ -1,0 +1,32 @@
+[
+    {
+        "title" : "Aula de Futebol",
+        "categoria" : "Esportes",
+        "tipo_estudo" : "presencial",
+        "descricao" : "Dou aulas de futebol por R$50/aula"
+    },
+    {
+        "title" : "Reforço de Matemática",
+        "categoria" : "Matemática",
+        "tipo_estudo" : "ambos",
+        "descricao" : "Aulas de reforço para fundamental por R$20/aula"
+    },
+    {
+        "title" : "Curso de Front-end",
+        "categoria" : "Programação",
+        "tipo_estudo" : "remoto",
+        "descricao" : "Dou curso completo de programação front-end, com frameworks como: React-native, React, Vue.js, etc."
+    },
+    {
+        "title" : "Aula de Redação",
+        "categoria" : "ENEM",
+        "tipo_estudo" : "presencial",
+        "descricao" : "Aulas para quem deseja aumentar sua habilidade em escrever redações para o ENEM"
+    },
+    {
+        "title" : "Aula de Espanhol",
+        "categoria" : "Espanhol",
+        "tipo_estudo" : "ambos",
+        "descricao" : "Dou aulas de Espanhol do básico ao avançado, interessados me solicitem!"
+    }
+]

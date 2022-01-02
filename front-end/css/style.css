@@ -1,0 +1,1084 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('http://fonts.cdnfonts.com/css/caviar-dreams');
+
+/*  */
+
+/* CONFIGURAÇÃO GERAL */
+
+/*  */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+.container{
+    width: 100%;
+    height: 100%;
+    background-color: #191919;
+    background-image: url(../img/backgrounds/background-home.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    transition: .5s ease-in-out;
+}
+
+@media (max-width: 480px) {
+    body, html{
+        height: auto;
+        overflow: auto;
+    }
+    .container{
+        height: auto;
+        background-attachment: scroll;
+        background-image: initial;
+        background-color: #00a6ff;
+        overflow-x: hidden;
+    }
+}
+
+.container::after{
+    content: '';
+    width: 100vw;
+    height: 80vw;
+    background: #00a6ff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(38%, -50%);
+    z-index: 0;
+    transition: .7s .1s ease-in-out;
+}
+
+.container.change::after{
+    background: #e46d00;
+    transform: translate(-48%, -50%);
+}
+
+.container .loading{
+    position: fixed;
+    z-index: 998;
+    background: rgb(255, 255, 255);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .4s ease-in-out;
+    opacity: 1;
+}
+
+.container .loading.hide{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.container .loading::after{
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: transparent;
+    border-top: 5px solid #09f;
+    border-right: 5px solid #09f;
+    border-bottom: 5px solid #09f;
+    border-radius: 50%;
+    animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate{
+    from{
+        transform: rotate(360deg);
+    }
+}
+
+header, main, footer{
+    z-index: 1;
+    position: relative;
+}
+
+
+
+/*  */
+
+/* ESTILIZAÇÃO MAIN */
+
+/*  */
+
+
+main.main{
+    width: 1100px;
+    height: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+}
+
+@media (max-width: 480px){
+    main.main{
+        width: 100%;
+        height: auto;
+        position: relative !important;
+        top: 0;
+        left: 0;
+        transform: translate(0);
+        display: flex;
+        flex-direction: column;
+    }
+    .container::after{
+        width: 200vw;
+        height: 200vw;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        background: rgba(0,0,0,0.4) !important;
+    }
+
+    .container.change{
+        background-color: #e46d00;
+    }
+    
+    .container.change::after{
+        background: initial;
+        transform: translate(-50%, 0%);
+    }
+}
+
+
+/*  */
+
+/* ESTILIZAÇÃO TELA - HOME */
+
+/*  */
+
+
+main.main .container-main{
+    opacity: 0;
+    transform: translateY(100vh);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    transition: all .5s ease-in-out;
+    position: absolute;
+}
+
+main.main .container-main.show{
+    opacity: 1;
+    transform: translate(0);
+}
+
+.box-form{
+    width: 40%;
+    background: rgba(255,255,255,0.83);
+    border-radius: 6px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    box-shadow: 20px 50px 60px rgba(51, 51, 51, 0.418);
+    transition: .5s .0s ease-in-out;
+    position: relative;
+}
+
+.container-main > .box-form{
+    opacity: 0;
+    transform: translateY(30px);
+    height: 100%;
+}
+
+.box-form hr{
+    width: 100%;
+    height: 1px;
+    margin: 13px 0;
+    background: rgb(138, 138, 138);
+    opacity: .3;
+}
+
+.box-form .form-control{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.box-form .form-control label{
+    margin-bottom: 7px;
+}
+
+.box-form .form-control select{
+    background: #fff;
+}
+
+.box-form .form-control input[type="text"],
+.box-form .form-control input[type="password"],
+.box-form .form-control select{
+    margin-bottom: 15px;
+    outline: none;
+    height: 28px;
+    border: none;
+    border-radius: 13px;
+    padding: 0 14px;
+}
+
+.box-form .form-control select::-ms-expand{
+    margin-top: 14px;
+    background: blue;
+}
+
+.box-form .form-control input[type="submit"]{
+    margin: 10px auto 0 auto;
+    width: 37%;
+    padding: 10px 0;
+    border: none;
+    outline: none;
+    background: linear-gradient(90deg, #1322ee, #5f5fe8);   
+    color: white;
+    border-radius: 5px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.box-form .form-control input[type="submit"]:hover{
+    transform: scale(1.1);
+}
+
+.box-info-cards-side{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: .9rem;
+}
+
+.box-mini-cards{
+    display: flex;
+    width: 100%;
+    height: 30%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box-mini-cards .mini-card{
+    width: 28%;
+    height: 100%;
+    background: rgba(255,255,255, 1);
+    border-radius: 6px;
+    box-shadow: 20px 50px 60px rgba(51, 51, 51, 0.418);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    transition: .5s .0s;
+    opacity: 0;
+    transform: translateY(30px)
+}
+
+.box-mini-cards .mini-card hr{
+    width: 100%;
+    margin: 9px 0 6px 0;
+}
+
+.box-mini-cards .mini-card p{
+    font-size: .7rem;
+    text-align: center;
+}
+
+.box-info {
+    width: 100%;
+    height: 63%;
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    box-shadow: 20px 50px 60px rgba(51, 51, 51, 0.418);
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: .5s .0s;
+}
+
+.box-info .info-left{
+    width: 50%;
+    padding: 15px;
+    font-size: .66rem;
+}
+
+.box-info .info-left > h4{
+    transform: translateX(-17px);
+    padding: 5px;
+    background: rgb(196, 196, 196);
+    font-weight: 400;
+    text-align: center;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 7px;
+}
+
+.box-info .info-left >p{
+    margin-bottom: 4px;
+}
+
+.box-info .info-left .info-alert{
+    padding: 8px;    
+    background: rgb(196, 196, 196);
+}
+
+.box-info .info-left .info-alert ul{
+    margin: 5px 0 5px 14px;
+}
+
+.box-info .info-right{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    padding: 30px;
+    overflow: hidden;
+    position: relative;
+    background: black;
+}
+
+.box-info .info-right img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position:center;
+    position: absolute;
+    opacity: .75;
+    transition: transform .9s;
+}
+
+.box-info .info-right img:hover{
+    transform: scale(1.1)
+}
+
+.box-info .info-right svg{
+    opacity: .83;
+    pointer-events: none;
+}
+
+@media (max-width: 480px){
+    main.main .container-main:not(.container-main[data-main="home"]):not(.container-main[data-main="cadastro"]){
+        display: none;
+    }
+    main.main .container-main{
+        position: relative;
+        height: auto !important;
+        opacity: 1;
+        display: flex;
+        transform: translate(0)
+    }
+
+    
+    main.main .container-main[data-main="cadastro"]{
+        display: flex !important;
+        opacity: 1 !important;
+        position: relative;
+    }
+    .box-info-cards-side{
+        display: none;
+    }
+    .container-main > .box-form{
+        width: 100% !important;
+        height: auto !important;
+    }
+    .box-form .form-control input[type="submit"]{
+        width: 100%;
+    }
+}
+
+/*  */
+
+/* ESTILIZAÇÃO DAS ANIMAÇÕES NA MUDANÇA DE TELA */
+
+/*  */
+
+
+main.main .container-main.show .box-form{
+    opacity: 1;
+    transform: translateY(0);
+    transition: .5s .5s ease-in-out;
+}
+
+main.main .container-main.show .mini-card:nth-child(1){
+    transition: .5s .6s;
+}
+
+main.main .container-main.show .mini-card:nth-child(2){
+    transition: .5s .7s;
+}
+
+main.main .container-main.show .mini-card:nth-child(3){
+    transition: .5s .8s;
+}
+
+main.main .container-main.show .mini-card{
+    opacity: 1;
+    transform: translateY(0)
+}
+
+main.main .container-main.show .box-info{
+    transition: .5s .9s;
+    opacity: 1;
+    transform: translateY(0)
+}
+
+/*  */
+
+/* ESTILIZAÇÃO TELA - OBJETIVOS */
+
+/*  */
+
+.container-obj-left{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+.box-frase{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding:100px 70px 75px 70px;
+    border-radius: 70%;
+    transition: .6s .0s ease-in-out;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.box-frase > svg{
+    position: absolute;
+    width: 85%;
+    height: 85%;
+    padding: 0;
+    margin: 0;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.box-frase *:not(svg){
+    position: relative;
+    z-index: 1;
+}
+
+.box-frase img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    float: left;
+    transform: translate(-35%, -38%);
+    margin: 0 -21% -28% 0;
+}
+
+.box-frase > p:not(p#span-autor) {
+    font-family: 'Caviar Dreams', sans-serif;
+    font-size: 1.4rem;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.box-frase p#span-autor{
+    margin-top: 5px;
+    text-align: center;
+}
+
+.container-obj-right{
+    width: 60%;
+    padding: 50px 35px 50px 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas: 'a a'
+                         'b c';
+    grid-gap: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 1.05rem;
+    
+}
+
+.card-obj{
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.7), rgba(255,255,255,0.15));
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-right: 1px solid rgb(160, 160, 160);
+    border-bottom: 1px solid rgb(160, 160, 160);
+    border-radius: 5px; 
+    transform: translateY(30px);
+    opacity: 0;
+    transition: .5s .0s ease-in-out;
+}
+
+.card-obj#top{
+    grid-area: a;
+}
+
+.card-obj#bottom {
+    width: 100%;
+    grid-area: c;
+    padding: 35px;
+}
+
+.card-obj#bottom p{
+    margin-bottom: 10px;
+}
+
+.box-card-obj{
+    width: 100%;
+    display: grid;
+    grid-area: b;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 15px;
+}
+
+/*  */
+
+/* ESTILIZAÇÃO DAS ANIMAÇÕES NA MUDANÇA DE TELA */
+
+/*  */
+
+main.main .container-main.show .box-frase{
+    opacity: 1;
+    transform: translateY(0);
+    transition: .5s .4s;
+}
+
+main.main .container-main.show .card-obj{
+    opacity: 1;
+    transform: translateY(0);
+}
+main.main .container-main.show .card-obj#top{
+    transition: .5s .5s;
+}
+main.main .container-main.show .card-obj.center-top{
+    transition: .5s .6s;
+}
+main.main .container-main.show .card-obj:nth-child(2){
+    transition: .5s .7s;
+}
+main.main .container-main.show .card-obj:nth-child(3){
+    transition: .5s .8s;
+}
+main.main .container-main.show .card-obj:nth-child(4){
+    transition: .5s .9s;
+}
+main.main .container-main.show .card-obj:nth-child(5){
+    transition: .5s .10s;
+}
+
+
+/*  */
+
+/* ESTILIZAÇÃO TELA - CADASTRO */
+
+/*  */
+
+.box-changeForm{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.box-changeForm > .box-form {
+    width: 65%;
+    margin-right: 0;
+    z-index: 2;
+    transition: .5s 0s ease-in-out;
+}
+
+.box-changeForm > .box-form > p{
+    margin-top: 10px;
+}
+
+.box-changeForm > .changeCadastro{
+    width: 35%;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    text-align: center;
+    padding: 20px;    
+    color: white;
+    border-radius: 0px 7px 7px 0px;
+    background-image: url('../img/backgrounds/changeCadastro.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transition: .5s 0s ease-in-out;
+    transform: translate(-30px);
+    z-index: 1;
+}
+
+.box-changeForm > .changeCadastro::before{
+    content: '';
+    background: linear-gradient(180deg, rgba(34, 25, 18, 0.8), rgba(0,0,0,0.9));
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+}
+
+.box-changeForm > .changeCadastro > *{
+    z-index: 1;
+}
+
+.box-changeForm > .changeCadastro button {
+    background: white;
+    color: #3d2c1f;
+    padding: 20px 0;
+    width: 100%;
+    border-radius: 7px;
+    margin: 15px 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: .9rem;
+    border: none;
+    outline: none;
+    transition: .5s ease-in-out;
+}
+
+.box-changeForm > .changeCadastro button:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.info-options {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+}
+
+.info-options .info-option{
+    width: 100%;
+    height: 32%;
+    border-radius: 7px;
+    margin: 10px 0;
+    background: white;
+    color: #005887;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: .9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: .5s ease-in-out;
+}
+.info-options .info-option h2 {
+    font-size: .9rem;
+}
+
+.info-options .info-option#aluno{
+    background: #312319;
+    color: white;
+}
+
+@media (max-width: 480px) {
+    .container-main[data-main="cadastro"]{
+        margin-top: 40px;
+    }
+    .box-changeForm{
+        width: 100%;
+        flex-wrap: wrap-reverse;
+    }
+    .info-options{
+        display: none;
+    }
+    .box-changeForm > .box-form{
+        width: 100%;
+    }
+    .box-changeForm > .changeCadastro{
+        transform: translateY(20px);
+        opacity: 1;
+        width: 80%;
+        border-radius: 7px;
+        padding: 20px;
+        z-index: 100;
+    }
+}
+
+/*  */
+
+/* ESTILIZAÇÃO DAS ANIMAÇÕES NA MUDANÇA DE TELA */
+
+/*  */
+
+main.main .container-main.show .changeCadastro{
+    opacity: 1;
+    transition: .5s .64s ease-in-out;
+    transform: translate(0);
+}
+
+main.main .container-main.show .info-option:nth-child(1){
+    opacity: 1;
+    transition: .5s .75s ease-in-out;
+    transform: translateY(0);
+}
+
+main.main .container-main.show .info-option:nth-child(2){
+    opacity: 1;
+    transition: .5s .85s ease-in-out;
+    transform: translateY(0);
+}
+
+.container.change .box-changeForm > .changeCadastro{
+    border-radius: 7px 0px 0px 7px;
+}
+
+/*  */
+
+/* ESTILIZAÇÃO TELA - HOME */
+
+/*  */
+
+.content-sobrenos{
+    width: 100%;
+    height: 100%;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+
+.content-left-sobre{
+    width: 70%;
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content-left-sobre .box-testmonial-sobre{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: .5s 0s ease-in-out;
+}
+
+.content-left-sobre .box-testmonial-sobre img{
+    width: 20%;
+    border-radius: 50%;
+    border: solid 2px white;
+    object-fit: cover;
+    object-position: center;
+}
+
+.testmonial-sobre{
+    width: 70%;
+    height: 100%;
+    background: white;
+    padding: 15px 20px;
+    border-radius: 0px 12px 12px 12px;
+    font-size: .8rem;
+    text-align: center;
+    position: relative;
+    color: #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.testmonial-sobre h3{
+    margin-bottom: 5px;
+}
+
+.testmonial-sobre::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-left: 20px solid transparent;
+    border-bottom: 20px solid white;
+    border-right: 20px solid transparent;
+}
+
+.content-right-sobre{
+    width: 25%;
+    height: 100%;
+    background: #000;
+    border-radius: 8px;
+    border: 2px solid white;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: .5s 0s ease-in-out;
+}
+
+.content-right-sobre .card-sobre{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+.content-right-sobre .card-sobre::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;background: url('../img/backgrounds/background-sobrenos.png');
+    background-size: cover;
+    background-position: center;
+    opacity: .4;
+}
+
+.content-right-sobre .card-sobre svg{
+    width: 90%;
+}
+.content-right-sobre .card-sobre p{
+    color: white;
+}
+
+/*  */
+
+/* ESTILIZAÇÃO DAS ANIMAÇÕES NA MUDANÇA DE TELA */
+
+/*  */
+
+
+.container-main.show .box-testmonial-sobre:nth-child(1){
+    opacity: 1;
+    transform: translateY(0);
+    transition: .5s .5s ease-in-out;
+}
+.container-main.show .box-testmonial-sobre:nth-child(2){
+    opacity: 1;
+    transform: translateY(0);
+    transition: .5s .6s ease-in-out;
+}
+.container-main.show .box-testmonial-sobre:nth-child(3){
+    opacity: 1;
+    transform: translateY(0);
+    transition: .5s .7s ease-in-out;
+}
+
+.container-main.show .content-right-sobre{
+    opacity: 1;
+    transform: translateY(0);
+    transition: .5s .8s ease-in-out;
+}
+
+/*  */
+
+/* ESTILIZAÇÃO TELA - CONTATO */
+
+/*  */
+
+.box-form-contato{
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 40px;
+    border-radius: 7px;
+    font-size: .9rem;
+}
+.box-form-contato h1{
+    font-size: .95rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.box-form-contato form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group-contato{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.input-group-contato input,
+.input-group-contato textarea{
+    background: white;
+    border-radius: 7px;
+    padding: 5px 10px;
+    width: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    margin-bottom: 7px;
+}
+.box-name{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 100% 100%;
+    grid-column-gap: 25px;
+}
+.box-form-contato form input[type="submit"]{
+    width: 100%;
+    background: #222;
+    color: white;
+    border-radius: 7px;
+    padding: 6px 0px;
+    transition: .5s;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: .9rem;
+}
+.box-form-contato form input[type="submit"]:hover{
+    background: rgb(63, 63, 63);
+}
+
+/*  */
+
+/* ESTILIZAÇÃO CONTROL ARROWS (SETAS DE CONTROLES - MANIPULAÇÃO DE TELAS) */
+
+/*  */
+
+
+.control-arrows{
+    width: 1100px;
+    height: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    pointer-events: none;
+}
+
+.control-arrows .fas{
+    width: 30px;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    position: absolute;
+    top: 0;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    border-radius: 4px;
+    cursor: pointer;
+    pointer-events: all;
+    transition: .5s;
+}
+
+.control-arrows .fas.fa-chevron-left{
+    left: 0;
+    transform: translateX(-100%);
+}
+
+.control-arrows .fas.fa-chevron-right{
+    right: 0;
+    transform: translateX(100%);
+}
+
+.control-arrows .fas.fa-chevron-left:hover{
+    transform: translateX(calc(-100% - 5px));
+    background: rgba(255, 255, 255, 0.8);
+    color: black
+}
+
+.control-arrows .fas.fa-chevron-right:hover{
+    transform: translateX(calc(100% + 5px));
+    background: rgba(255, 255, 255, 0.8);
+    color: black
+}
+
+
+@media (max-width: 480px) {
+    .control-arrows{
+        display: none;
+    }
+}
+
+/*  */
+
+/* ESTILIZAÇÃO FOOTER */
+
+/*  */
+
+
+.footer{
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    background: rgba(0,0,0,0.8);
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white ;
+}
+
+.footer a{
+    color: white;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin: 0 6px;
+}
+
+@media (max-width: 480px) {
+    .footer{
+        display:none;
+    }
+}

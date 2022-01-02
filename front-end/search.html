@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proffinder | Home</title>
+    <link rel="stylesheet" href="css/searchScreen.css">
+    <link rel="stylesheet" href="css/navbarI.css">
+    <link rel="stylesheet" href="css/cardArea.css">
+    <link rel="stylesheet" href="css/modalLogin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/boxViewArea.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="loading">
+            <div class="alert-box" id="alertBox">
+                <h2></h2>
+            </div>
+        </div>
+        <div class="modal-login">
+            <div class="box-form" id="box-form-login">
+                <span class="btn-close">X</span>
+                <h3>ENTRE AGORA</h3>
+                <form method="post" class="form-control" id="form-login" enctype="multipart/form-data">
+                    <label for="lemail">E-mail:</label>
+                    <input type="text" name="email" id="lemail" placeholder="Insira seu e-mail aqui">
+                    <label for="lsenha">Senha:</label>
+                    <input type="password" name="senha" id="lsenha" placeholder="Insira sua senha aqui">
+                    <input type="submit" value="ENTRAR">
+                </form>
+            </div>      
+        </div>
+        <header class="header">
+            <div class="logo-text">
+                <h1>Proffinder </h1>
+                <span> - Professores capacitados</span>
+            </div>
+            <div class="navbar">
+                <a href="index.html?i=0" data-main="home">HOME</a>
+                <a href="index.html?i=1" data-main="objetivos">OBJETIVOS</a>
+                <a href="index.html?i=2" data-main="cadastro" id="changeButton">CADASTRE-SE</a>
+                <a href="index.html?i=3" data-main="sobrenos">SOBRE NÓS</a>
+                <a href="index.html?i=4" data-main="contato">CONTATO</a>
+            </div>
+        </header>
+        <main>
+            <div class="box-search">
+                <form action="#" method="post" enctype="multipart/form-data" id="formSearchBar">
+                    <div class="input-group">
+                        <label for="busca">Pesquisar:</label>
+                        <input type="text" id="busca" name="busca" placeholder="faça sua pesquisa aqui">
+                    </div>
+                    <button type="submit"><i class="fas fa-search"></i>Buscar</button>
+                </form>
+
+                <div class="box-result searchScreen" id="boxResult">
+                    
+                </div>
+            </div>
+            
+            <form action="search.html" method="POST" enctype="multipart/form-data" id="formSearchByOptions">
+                <div class="box-inputs-radio">
+                    <label for="tipoEstudo">Tipo de Estudo:</label>
+                    <div class="input-group-type">
+                        <input type="radio" name="tipoEstudo" id="rAmbos" value="ambos" checked>
+                        <label for="rAmbos">Ambos</label>
+                    </div>
+                    <div class="input-group-type">
+                        <input type="radio" name="tipoEstudo" id="rPresencial" value="presencial">
+                        <label for="rPresencial" >Presencial</label>
+                    </div>
+                    <div class="input-group-type">
+                        <input type="radio" name="tipoEstudo" id="rRemoto" value="remoto">
+                        <label for="rRemoto" >Remoto</label>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="categoria">Categoria:</label>
+                    <select name="categoria" id="categoria">
+                        <option value="default">Todas</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="cidadeUf">Cidade:</label>
+                    <select name="cidadeUf" id="cidadeUf">
+                        <option value="default">Todas</option>
+                    </select>
+                </div>
+                <input type="submit" value="Buscar">
+            </form>
+            
+
+            
+        </main>
+        <div class="modalViewArea hide" id="modalViewArea">
+            <div class="box-modalViewArea">
+                <div class="top-bar-info">
+                    <div class="info-title-area">
+                        <h2 id="viewTitleArea"></h2>
+                    </div>
+                    <div class="info-img-area">
+                        <img src="" alt="" id="viewImgArea">
+                    </div>
+                    <div class="info-professor">
+                        <img src="" alt="">
+                        <a href=""></a>
+                    </div>
+                    <span id="closeModalViewArea">Fechar</span>
+                </div>
+                <div class="box-info-view-area">
+                    <form action="#" method="POST" id="formViewArea" enctype="multipart/form-data">
+                        <input type="number" name="idArea" hidden readonly>
+                        <input type="number" name="idProfessor" hidden readonly>
+                        <div class="input-group" >
+                            <label for="vTipoEstudo">Tipo do estudo:</label>
+                            <input type="text" name="vTipoEstudo" id="vTipoEstudo" readonly>
+                        </div>
+                        <div class="input-group">
+                            <label for="vCategoria">Categoria:</label>
+                            <input type="text" name="vCategoria" id="vCategoria" readonly>
+
+                        </div>
+                        <div class="input-group">
+                            <label for="vDescricao">Descrição:</label>
+                            <div id="vDescricao"></div>
+                        </div>
+                        <input type="submit" value="Solicitar">
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script src="js/controller/ajax.js"></script>
+    <script src="js/controller/usuario.js"></script>
+    <script src="js/searchScreen.js"></script>
+    <script src="js/modalViewArea.js"></script>
+</body>
+</html>

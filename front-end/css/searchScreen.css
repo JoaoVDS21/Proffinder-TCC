@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('http://fonts.cdnfonts.com/css/caviar-dreams');
+
+/*  */
+
+/* CONFIGURAÇÃO GERAL */
+
+/*  */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+body{
+    background-image: url(../img/backgrounds/background-home.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top;
+    background-color: #191919;
+
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.container::after{
+    content: '';
+    width: 100vw;
+    height: 80vw;
+    background: #00a6ff;
+    border-radius: 50%;
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translate(38%, -50%);
+    z-index: 0;
+    transition: .7s .1s ease-in-out;
+}
+
+.container.change::after{
+    background: #e46d00;
+    transform: translate(-48%, -50%);
+}
+
+.container .loading{
+    position: fixed;
+    z-index: 998;
+    background: rgb(255, 255, 255);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .4s ease-in-out;
+    opacity: 1;
+}
+
+.container .loading.hide{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.container .loading::after{
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: transparent;
+    border-top: 5px solid #09f;
+    border-right: 5px solid #09f;
+    border-bottom: 5px solid #09f;
+    border-radius: 50%;
+    animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate{
+    from{
+        transform: rotate(360deg);
+    }
+}
+
+header, main, footer{
+    z-index: 1;
+    position: relative;
+}
+
+
+main{
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+    display: grid;
+    grid-column-gap: 25px;
+    grid-template-columns: 2.5fr 1fr;
+}
+
+.box-search form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+
+}
+
+.box-search form .input-group{
+    width: 80%;
+    height: 100%;
+    border-radius: 7px 0 0 7px;
+    display: grid;
+    grid-template-columns: 1fr 11fr;
+    position: relative;
+    background: rgba(255, 255, 255, 0.664);
+    padding: 10px 40px;
+}
+
+
+.box-search button[type="submit"]{
+    width: 20%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.664);
+    border: none;
+    outline: none;
+    border-radius: 0 7px 7px 0;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+main form button[type="submit"] i{
+    margin-right: 10px;
+}
+
+main form button[type="submit"]:hover{
+    background: rgb(27, 27, 27);
+
+}
+
+.box-search .input-group input{
+    background: none;
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    width: 80%
+}
+
+.box-result{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+
+
+
+
+#formSearchByOptions{
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.664);
+    border-radius: 7px;
+    box-shadow: 20px 50px 60px rgba(51, 51, 51, 0.318);
+}
+
+.input-group{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 6px 0;
+}
+
+.input-group label,
+.box-inputs-radio > label{
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.input-group select{
+    border: none;
+    outline: none;
+    background: #fff;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#formSearchByOptions input[type="submit"]{
+    width: 100%;
+    margin-top: 8px;
+    background: linear-gradient(135deg, #09f, rgb(83, 186, 255));
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 7px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+} 
+
+#formSearchByOptions input[type="submit"]:hover{
+    transform: scale(1.05);
+}
+
+
+@media (max-width: 480px) {
+    main{
+        width: 95%;
+        margin: 20px auto;
+        display: flex;
+        flex-wrap: wrap-reverse;
+    }
+    .box-search{
+        width: 100%;
+    }
+    #formSearchByOptions{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+}

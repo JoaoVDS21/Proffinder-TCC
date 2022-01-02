@@ -1,0 +1,63 @@
+
+/*  */
+
+/* ESTILIZAÇÃO HEADER */
+
+/*  */
+
+
+header.header{
+    width: 1200px;
+    height: 60px;
+    background: rgba(255,255,255, 0.83);
+    margin: 0 auto;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 45px;
+    margin-bottom: 20px;
+    box-shadow: 20px 50px 60px rgba(51, 51, 51, 0.418);
+}
+
+header.header .logo-text{
+    display: flex;
+    align-items: center;
+    font-family: 'Caviar Dreams', sans-serif;
+    font-style: italic;
+}
+
+header.header .logo-text h1{
+    text-transform: uppercase;
+    font-size: 1.55rem;
+    margin-right: 12px;
+}
+
+.navbar a{
+    padding: 5px 12px;
+    font-size: .9rem;
+    transition: .5s;
+    border-radius: 4px;
+}
+
+.navbar a:hover{
+    background: white;
+}
+
+.navbar a.active{
+    background: white;
+}
+
+@media (max-width: 480px) {
+    header.header{
+        width: 100%;
+        padding: 0;
+        justify-content: center;
+    }
+    header.header .logo-text{
+        font-size: .8rem;
+    }
+    .navbar{
+        display: none;
+    }
+}

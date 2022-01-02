@@ -1,0 +1,164 @@
+
+:is(.chat, .box-contatos-side)::-webkit-scrollbar{
+    width: 5px;
+}
+
+
+:is(.chat, .box-contatos-side)::-webkit-scrollbar-thumb{
+    background: linear-gradient(180deg, rgb(255, 255, 255), rgb(140, 147, 255));
+    border-radius: 4px;
+}
+
+.box-contatos-side{
+    width: 32%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #ddd;
+    padding-top: 12px;
+    font-size: .9rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.contato-item{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    /* border-bottom: solid 1px rgb(196, 196, 196); */
+    transition: .5s;
+    font-weight: 500;
+    color: #222;
+
+}
+
+.contato-item:nth-child(even){
+    background: rgb(210, 210, 210);
+}
+
+.contato-item:hover{
+    cursor: pointer;
+    background: white;
+}
+
+.contato-item .photo{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.contato-item .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.box-chat{
+    width: 68%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.about-contato{
+    width: 100%;
+    padding: 13px;
+    display: flex;
+    align-items: center;
+    background: rgb(230, 230, 230);
+    height: 55px;
+}
+
+.about-contato img {
+    height: 43px;
+    width: 43px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    padding: 1px;
+    background: white;
+}
+
+.about-contato h3{
+    font-size: 1.05rem;
+    color: rgb(27, 27, 27);
+    margin-left: 15px;
+}
+
+.chat{
+    width: 100%;
+    height: calc(100% - 55px - 45px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    font-size: .85rem;
+    padding: 15px;
+    scroll-behavior: smooth;
+}
+
+.mensagem-de{
+    max-width: 48%;
+    padding: 7px;
+    font-size: .9rem;
+    margin: 5px 0px 5px auto;
+    background: rgb(230, 230, 230); 
+    border-radius: 7px 0 7px 7px;
+    word-break:break-word;
+    /* box-shadow: -5px 5px 15px rgba(161, 161, 161, 0.336); */
+}
+
+.mensagem-para{
+    max-width: 48%;
+    padding: 7px;
+    font-size: .9rem;
+    margin: 5px auto 5px 0;
+    background: rgb(81, 185, 255); 
+    border-radius: 0px 7px 7px 7px;
+    word-break: break-word;
+    color: white;
+    box-shadow: -5px 5px 15px rgba(51, 51, 51, 0.336);
+
+}
+
+.box-chat form{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(230, 230, 230);
+}
+
+.box-chat form input[type="text"]{
+    background: none;
+    border: none;
+    outline: none;
+    padding: 7px;
+    border-bottom: 1px solid #ddd;
+    width: 80%;
+}
+
+.box-chat form button{
+    background: #09f;
+    border: none;
+    outline: none;
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.05rem;
+    transform: rotate(13deg);
+    cursor: pointer;
+    transition: .5s;
+}
+
+.box-chat form button:hover{
+    transform: scale(1.1);
+}

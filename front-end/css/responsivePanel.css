@@ -1,0 +1,194 @@
+@media (max-width: 480px) {
+
+
+    body, html{
+
+        height: auto;
+        overflow: auto;
+    }
+    .container{
+        height: auto;
+        background-attachment: scroll;
+        overflow-x: hidden;
+        position: relative;
+    }
+    .container::after{
+        display: none;
+    }
+
+
+
+
+    header.header{
+        width: 100%;
+        padding: 0;
+        justify-content: center;
+    }
+    header.header .logo-text{
+        font-size: .8rem;
+    }
+    .navbar{
+        display: none;
+    }
+
+
+    /*  */
+
+    /* ESTILIZAÇÃO MAIN */
+
+    /*  */
+
+
+    main.main{
+        width: 95vw;
+        height: auto;
+    }
+    .box-painel{
+        flex-direction: column;
+    }
+
+
+    /*  */
+
+    /* ESTILIZAÇÃO NAVBAR */
+
+    /*  */
+
+
+    .navbar-profile{
+        width: 100%;
+        height: auto;
+        
+    }
+    .profile-info{
+        flex-direction: row;
+        justify-content: center;
+        padding: 15px;
+    }
+    .profile-photo{
+        width: 80px;
+        height: 80px;
+        margin-right: 20px;
+        margin-bottom: 0;
+
+    }
+    .box-navbar-items .navbar-item:nth-last-child(1){
+        position: relative;
+        border-bottom-left-radius: 7px;
+        border-bottom-right-radius: 7px;
+    }
+
+
+
+    /*  */
+
+    /* ESTILIZAÇÃO BOX SCREENS */
+
+    /*  */
+
+
+    .box-screens{
+        width: 100%;
+        height: auto;
+        min-height: 60vh;
+        margin-top: 10px;
+    }
+
+    
+    .box-screens .screens{
+        top: 0;
+        position: relative;
+        height: auto;
+    }
+
+    .box-screens .screens .screen{
+        position: relative;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .box-screens .title-screen{
+        width: 100%;
+        text-align: center;
+        position: relative;
+        transform: translate(0);
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+    }
+
+
+    /*  */
+
+    /* ESTILIZAÇÃO SCREEN - MENSAGENS */
+
+    /*  */
+
+
+    .box-contatos-side{
+        width: auto;
+        padding: 0;
+        /* background: green; */
+        max-height: 70vh;
+    }
+
+    .contato-item{
+        padding: 12px;
+    }
+
+    .contato-info{
+        display: none;
+    }
+
+    .contato-item .photo{
+        width: 45px;
+        height: 45px;
+        margin: 0;
+    }
+
+    .box-chat{
+        flex: 1;
+        max-height: 70vh;
+    }
+
+    .chat{
+        height: calc(70vh - 55px - 55px) !important;
+    }
+
+    .mensagem-de,
+    .mensagem-para{
+        max-width: 90%;
+        font-size: .8rem;
+    }
+
+    .box-chat form{
+        height: 55px;
+    }
+
+
+    /*  */
+
+    /* ESTILIZAÇÃO SCREEN - AREAS CADASTRADAS */
+
+    /*  */
+
+
+    .box-areas{
+        padding: 10px 5px 20px 5px;
+        max-height: 70vh;
+        background: transparent;
+        flex-direction: row;
+        overflow-y: auto;
+        flex-wrap: wrap;
+    }
+
+    .box-areas::-webkit-scrollbar{
+        width: 5px;
+    }
+    
+    .box-areas::-webkit-scrollbar-thumb{
+        background:rgb(100, 193, 255);
+        border-radius: 5px;
+    }
+
+    
+}

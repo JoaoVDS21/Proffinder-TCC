@@ -1,0 +1,716 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('http://fonts.cdnfonts.com/css/caviar-dreams');
+
+/*  */
+
+/* CONFIGURAÇÃO GERAL */
+
+/*  */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+.container{
+    width: 100%;
+    height: 100%;
+    background-color: #191919;
+    background-image: url(../img/backgrounds/background-home.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.container::after{
+    content: '';
+    width: 100vw;
+    height: 80vw;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    background: #00a6ff;
+    transform: translate(48%, -50%);
+    z-index: 0;
+    transition: .7s .1s ease-in-out;
+}
+
+/* .container.change::after{
+    background: #e46d00;
+    transform: translate(-48%, -50%);
+} */
+
+.container .loading{
+    position: fixed;
+    z-index: 998;
+    background: rgb(255, 255, 255);
+
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .4s ease-in-out;
+    opacity: 1;
+}
+
+.container .loading.hide{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.container .loading::after{
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: transparent;
+    border-top: 5px solid #09f;
+    border-right: 5px solid #09f;
+    border-bottom: 5px solid #09f;
+    border-radius: 50%;
+    animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate{
+    from{
+        transform: rotate(360deg);
+    }
+}
+
+header, main{
+    z-index: 1;
+    position: relative;
+}
+
+/*  */
+
+/* ESTILIZAÇÃO HEADER */
+
+/*  */
+
+
+header.header{
+    width: 100%;
+    height: 60px;
+    background: rgba(255,255,255, 0.83);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 45px;
+    margin-bottom: 15px;
+    box-shadow: 20px 50px 60px rgba(51, 51, 51, 0.418);
+}
+
+header.header .logo-text{
+    display: flex;
+    align-items: center;
+    font-family: 'Caviar Dreams', sans-serif;
+    font-style: italic;
+}
+
+header.header .logo-text h1{
+    text-transform: uppercase;
+    font-size: 1.55rem;
+    margin-right: 12px;
+}
+
+.navbar a{
+    padding: 5px 12px;
+    font-size: .9rem;
+    transition: .5s;
+    border-radius: 4px;
+}
+
+.navbar a:hover{
+    background: white;
+}
+
+.navbar a.active{
+    background: white;
+}
+
+/*  */
+
+/* ESTILIZAÇÃO MAIN */
+
+/*  */
+
+
+
+main.main{
+    width: 80vw;
+    max-width: 1100px;
+    height: calc(100vh - 30px - 60px);
+    overflow: hidden;
+    border-radius: 8px;
+    margin: 15px auto;
+}
+
+.box-painel{
+    background: rgba(255,255,255,0.5);
+    width: 100%;
+    height: 100%;
+    padding: 7px; 
+    display: flex;
+}
+
+.box-painel::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 70px);
+    background:rgba(255,255,255, 0.83);
+    z-index: 0;
+}
+
+.box-painel *{
+    z-index: 10;
+}
+
+
+/*  */
+
+/* ESTILIZAÇÃO NAVBAR */
+
+/*  */
+
+
+
+.navbar-profile{
+    display: flex;
+    flex-direction: column;
+    background: #09f;
+    width: 26%;
+    height: 100%;
+    border-radius: 7px;
+    position: relative;
+    z-index: 101;
+}
+.profile-info{
+    background: #222;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.profile-photo{
+    width: 115px;
+    height: 115px;
+    background: #ccc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-photo img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 50;
+}
+
+.profile-info h3{
+    font-weight: 400;
+    font-size: .9rem;
+}
+
+.box-navbar-items{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.box-navbar-items .navbar-item{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    color: white;
+    font-size: .9rem;
+    font-weight: 400;
+    align-items: center;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+    z-index: 190;
+
+}
+.box-navbar-items .navbar-item:hover{
+    background: rgb(0, 127, 212);
+    transform: scale(1.015);
+}
+
+.box-navbar-items .navbar-item:nth-last-child(1){
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #222;
+}
+
+.box-navbar-items .navbar-item:nth-last-child(1):hover{
+    background: rgb(0, 127, 212);
+}
+
+.box-navbar-items .navbar-item svg{
+    width: 40px;
+    height: 100%;
+    padding: 10px;
+    margin: 0 12px; 
+}
+
+.navbar-item.active{
+    background: rgb(0, 127, 212);
+    transform: scale(1.015);
+}
+
+
+/*  */
+
+/* ESTILIZAÇÃO BOX SCREENS */
+
+/*  */
+
+
+.box-screens{
+    width: 74%;
+    height: 100%;
+    position: relative;
+    z-index: 100;
+}
+
+.box-screens .title-screen{
+    font-size: .85rem;
+    font-weight: 400;
+    background: #00a6ff;
+    padding: 6px 20px;
+    color: white;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 20;
+}
+
+.box-screens .screens{
+    position: absolute;
+    z-index: 19;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 63px);
+}
+.box-screens .screens .screen{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*  */
+
+/* ESTILIZAÇÃO SCREEN - MENSAGENS */
+
+/*  */
+
+
+#mensagens .container-screen{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    
+}
+
+
+
+/*  */
+
+/* ESTILIZAÇÃO SCREEN - AREAS CADASTRADAS */
+
+/*  */
+
+
+.box-areas{
+    width: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    overflow-x: scroll;
+    position: relative;
+    padding: 25px;
+    margin: 15px auto;
+    align-self: flex-start;
+}
+
+.box-areas::-webkit-scrollbar{
+    width: 8px;
+}
+
+.box-areas::-webkit-scrollbar-thumb{
+    background:rgb(124, 124, 124);
+    border-radius: 4px;
+}
+
+.card-area{
+    min-width: calc(50% - 30px);
+    max-width: calc(50% - 30px);
+    min-height: 50px;
+    padding: 10px;
+    border-radius: 7px;
+    background: rgb(216, 216, 216);
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size: .8rem;
+    margin:0 10px 20px 10px;
+    transition: .5s ease-in-out;
+}
+
+.card-area:hover{
+    transform: scale(1.035);
+    box-shadow: -10px 6px rgba(0, 0, 0, 0.384);
+    cursor: pointer;
+}
+
+.card-area span.btn-delete{
+    font-size: .8rem;
+    color: #fff;
+    font-weight: bolder;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(30%, -30%);
+    background: #09f;
+    margin: 0;
+    transition: .5s ease-in-out;
+}
+
+.card-area span.btn-delete:hover{
+    background: rgb(0, 106, 177);
+    transform: translate(30%, -30%) scale(1.04);
+    cursor: pointer;
+}
+
+.card-area:nth-child(odd){
+    margin-right: 20px
+}
+
+.card-area img:not(img.img-professor){
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+    padding: 2px;
+    background: white;
+}
+
+.card-area img.img-professor{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-20%, -20%);
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    z-index: 50;
+    box-shadow: -3px 3px 7px rgba(0,0,0,0.2)
+}
+
+.text-card-area{
+    width: calc(100% - 110px);
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-card-area button{
+    font-size: .7rem;
+    padding: 7px 20px;
+    background: #09f;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .5s;
+    margin-top: 7px;
+}
+
+.text-card-area p{
+    margin: 3px 0;
+}
+
+.text-card-area button i{
+    margin-right: 5px;
+}
+
+.text-card-area button:hover{
+    background: #333;
+}
+
+
+
+/* 
+ */
+/* ESTILIZAÇÃO TELA FAVORITOS */
+/* 
+ */
+
+
+
+.box-favoritos{
+    align-self: start;
+    width: 100%;
+    max-height: 100%;
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;   */
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.box-favoritos::-webkit-scrollbar{
+    width: 8px;
+}
+
+.box-favoritos::-webkit-scrollbar-thumb{
+    background: rgb(177, 177, 177);
+    border-radius: 5px;
+}
+
+.card-fav{
+    min-height: 150px;
+    min-width: calc(32% - 10px);
+    max-width: calc(32% - 10px);
+    background: rgb(228, 228, 228);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    border-radius: 7px;
+    transition: .7s .0s ease-in-out;
+    margin: 10px;
+    padding: 10px;
+}
+
+.card-fav.delete,
+.card-area.delete{
+    transition: .5s .1s ease-in-out;
+    max-width: 0px !important;
+    min-width: 0px !important;
+    max-height: 0px !important;
+    min-height: 0px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+    opacity: 0
+}
+
+.card-fav *:not(.access-overlay, span){
+    position: relative;
+    z-index: 8;
+}
+
+
+.card-fav::before{
+    content: '';
+    width: calc(100% - 6px);
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    height: 40%;
+    background:rgb(34, 34, 34);
+}
+
+.card-fav img{
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    object-position: center;
+    padding: 2px;
+    border-radius: 50%;
+    background: white;
+}
+
+.card-fav h3{
+    text-transform: capitalize;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.card-fav span{
+    width: 25px;
+    height: 25px;
+    background: #09f;
+    color: white;
+    font-weight: bolder;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(25%, -25%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+    z-index: index 11;;
+}
+
+.card-fav span:hover{
+    background: rgb(0, 97, 161);
+    transform: translate(25%, -25%) scale(1.05);
+}
+
+.access-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(2px);
+    transition: .5s ease-in-out;
+    border-radius: 7px;
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    z-index: 10;
+}
+
+.access-overlay a{
+    color: white;
+    background: transparent;
+    padding: 6px 15px;
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: .5s ease-in-out;
+}
+
+.access-overlay a:hover{
+    background: white;
+    color: black;
+}
+
+.card-fav:hover .access-overlay{
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+
+.alert-box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 480px) {
+    
+    
+    /*  */
+
+    /* ESTILIZAÇÃO SCREEN - AREAS SOLICITADAS */
+
+    /*  */
+
+    .box-areas{
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+    .card-area{
+        min-width: calc(100% - 30px);
+        max-width: calc(100% - 30px);
+        margin: 0 15px 20px 15px;
+    }
+
+
+    /* 
+    */
+    /* ESTILIZAÇÃO TELA FAVORITOS */
+    /* 
+    */
+
+
+    .card-fav{
+        min-height: 150px;
+        max-height: 150px;
+        min-width: calc(50% - 10px);
+        max-width: calc(50% - 10px);
+        margin: 0px;
+    }
+
+    .card-fav:nth-child(odd){
+        margin-right: 10px;
+    }
+    .card-fav:nth-child(even){
+        margin-left: 10px;
+    }
+    .card-fav:not(.card-fav:nth-last-child(1)){
+        margin-bottom: 20px;
+    }
+
+    .card-fav img{
+        width: 60px;
+        height: 60px;
+    }
+
+
+}

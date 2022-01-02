@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('http://fonts.cdnfonts.com/css/caviar-dreams');
+
+/*  */
+
+/* CONFIGURAÇÃO GERAL */
+
+/*  */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+.container{
+    width: 100%;
+    height: 100%;
+    background-color: #191919;
+    background-image: url(../img/backgrounds/background-home.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.container::after{
+    content: '';
+    width: 100vw;
+    height: 80vw;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    background: #00a6ff;
+    transform: translate(48%, -50%);
+    z-index: 0;
+    transition: .7s .1s ease-in-out;
+}
+
+/* .container.change::after{
+    background: #e46d00;
+    transform: translate(-48%, -50%);
+} */
+
+.container .loading{
+    position: fixed;
+    z-index: 998;
+    background: rgb(255, 255, 255);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .4s ease-in-out;
+    opacity: 1;
+}
+
+.container .loading.hide{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.container .loading::after{
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: transparent;
+    border-top: 5px solid #09f;
+    border-right: 5px solid #09f;
+    border-bottom: 5px solid #09f;
+    border-radius: 50%;
+    animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate{
+    from{
+        transform: rotate(360deg);
+    }
+}
+
+header, main{
+    z-index: 1;
+    position: relative;
+}
+
+/*  */
+
+/* ESTILIZAÇÃO HEADER */
+
+/*  */
+
+
+header.header{
+    width: 100%;
+    height: 60px;
+    background: rgba(255,255,255, 0.83);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 45px;
+    margin-bottom: 15px;
+    box-shadow: 20px 50px 60px rgba(51, 51, 51, 0.418);
+}
+
+header.header .logo-text{
+    display: flex;
+    align-items: center;
+    font-family: 'Caviar Dreams', sans-serif;
+    font-style: italic;
+}
+
+header.header .logo-text h1{
+    text-transform: uppercase;
+    font-size: 1.55rem;
+    margin-right: 12px;
+}
+
+.navbar a{
+    padding: 5px 12px;
+    font-size: .9rem;
+    transition: .5s;
+    border-radius: 4px;
+}
+
+.navbar a:hover{
+    background: white;
+}
+
+.navbar a.active{
+    background: white;
+}
+
+/*  */
+
+/* ESTILIZAÇÃO MAIN */
+
+/*  */
+
+
+
+main.main{
+    width: 80vw;
+    max-width: 1100px;
+    height: calc(100vh - 30px - 60px);
+    overflow: hidden;
+    border-radius: 8px;
+    margin: 15px auto;
+    position: relative;
+}
+
+.box-painel{
+    background: rgba(255,255,255,0.5);
+    width: 100%;
+    height: 100%;
+    padding: 7px; 
+    display: flex;
+    position: relative;
+}
+
+.box-painel::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 70px);
+    background:rgba(255,255,255, 0.83);
+    z-index: 0;
+}
+
+.box-painel *{
+    z-index: 10;
+}
+
+
+/*  */
+
+/* ESTILIZAÇÃO NAVBAR */
+
+/*  */
+
+
+
+.navbar-profile{
+    display: flex;
+    flex-direction: column;
+    background: #222;
+    width: 26%;
+    height: 100%;
+    border-radius: 7px;
+    position: relative;
+    z-index: 101;
+}
+
+.profile-info{
+    background: #444;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.profile-photo{
+    width: 115px;
+    height: 115px;
+    background: #ccc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-photo img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 50;
+}
+
+.profile-info h3{
+    font-weight: 400;
+    font-size: .9rem;
+}
+
+.box-navbar-items{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.box-navbar-items .navbar-item{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    color: white;
+    font-size: .9rem;
+    font-weight: 400;
+    align-items: center;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+    z-index: 190;
+
+}
+.box-navbar-items .navbar-item:hover{
+    background: #333;
+    transform: scale(1.015);
+}
+
+.box-navbar-items .navbar-item:nth-last-child(1){
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #444;
+}
+
+.box-navbar-items .navbar-item:nth-last-child(1):hover{
+    background: #555;
+}
+
+.box-navbar-items .navbar-item svg{
+    width: 40px;
+    height: 100%;
+    padding: 10px;
+    margin: 0 12px; 
+}
+
+.navbar-item.active{
+    background: rgb(46, 46, 46);
+    transform: scale(1.015);
+}
+
+
+/*  */
+
+/* ESTILIZAÇÃO BOX SCREENS */
+
+/*  */
+
+
+.box-screens{
+    width: 74%;
+    height: 100%;
+    position: relative;
+    z-index: 100;
+}
+
+.box-screens .title-screen{
+    font-size: .85rem;
+    font-weight: 400;
+    background: #00a6ff;
+    padding: 6px 20px;
+    color: white;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 20;
+}
+
+.box-screens .screens{
+    position: absolute;
+    z-index: 19;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 63px);
+}
+.box-screens .screens .screen{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*  */
+
+/* ESTILIZAÇÃO SCREEN - MENSAGENS */
+
+/*  */
+
+
+#mensagens .container-screen{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    
+}
+
+
+
+/*  */
+
+/* ESTILIZAÇÃO SCREEN - AREAS CADASTRADAS */
+
+/*  */
+
+
+.box-areas{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 10px 40px 20px;
+    overflow-y: scroll;
+    background: rgb(230, 230, 230);
+}
+
+.box-areas::-webkit-scrollbar{
+    width: 8px;
+}
+
+.box-areas::-webkit-scrollbar-thumb{
+    background:rgb(100, 193, 255);
+    border-radius: 5px;
+}
+
+

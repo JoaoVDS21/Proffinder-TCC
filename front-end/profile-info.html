@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proffinder | Perfil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/profileScreen.css">
+    <link rel="stylesheet" href="css/navbarI.css">
+    <link rel="stylesheet" href="css/cardArea.css">
+    <link rel="stylesheet" href="css/boxViewArea.css">
+    <link rel="stylesheet" href="css/modalLogin.css">
+</head>
+<body>
+    <div class="container">
+        <div class="loading"></div>
+        <div class="modal-login">
+            <div class="box-form" id="box-form-login">
+                <span class="btn-close">X</span>
+                <h3>ENTRE AGORA</h3>
+                <form method="post" class="form-control" id="form-login" enctype="multipart/form-data">
+                    <label for="lemail">E-mail:</label>
+                    <input type="text" name="email" id="lemail" placeholder="Insira seu e-mail aqui">
+                    <label for="lsenha">Senha:</label>
+                    <input type="password" name="senha" id="lsenha" placeholder="Insira sua senha aqui">
+                    <input type="submit" value="ENTRAR">
+                </form>
+            </div>      
+        </div>
+        <header class="header">
+            <div class="logo-text">
+                <h1>Proffinder </h1>
+                <span> - Professores capacitados</span>
+            </div>
+            <div class="navbar">
+                <a href="index.html?i=0" data-main="home">HOME</a>
+                <a href="index.html?i=1" data-main="objetivos">OBJETIVOS</a>
+                <a href="index.html?i=2" data-main="cadastro" id="changeButton">CADASTRE-SE</a>
+                <a href="index.html?i=3" data-main="sobrenos">SOBRE NÓS</a>
+                <a href="index.html?i=4" data-main="contato">CONTATO</a>
+            </div>
+        </header>
+        <main class="box-info">
+            <div class="box-user">
+                <button class="btnVoltar"><i class="fas fa-chevron-left"></i>VOLTAR</button>
+                <div class="header">
+                    <img src="" id="imgProfile">
+                    <button class="btn-favoritos" id="btnFavoritos"></button>
+
+                </div>
+                <form class="box-forms" id="boxForms">
+                    <div class="input-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" name="nome" id="nome" value="" readonly>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email:</label>
+                        <input type="text" name="email" id="email" value="" readonly>
+                    </div>
+                    <div class="input-group">
+                        <label for="cidade">Cidade/Estado:</label>
+                        <input type="text" name="cidade" id="cidade" value="" readonly>
+                    </div>
+                </form>
+            </div>
+            <p class="title-area">Áreas cadastradas</p>
+            <div class="box-result" id="boxResult">
+                
+            </div>
+        </main> 
+        <div class="modalViewArea hide" id="modalViewArea">
+            <div class="box-modalViewArea">
+                <div class="top-bar-info">
+                    <div class="info-title-area">
+                        <h2 id="viewTitleArea">Titulo da Area</h2>
+                    </div>
+                    <div class="info-img-area">
+                        <img src="../img/indexSobre/female.png" alt="" id="viewImgArea">
+                    </div>
+                    <div class="info-professor">
+                        <img src="../img/indexSobre/male.png" alt="">
+                        <a href="../profile-info.html">João Victor Domingues</a>
+                    </div>
+                    <span id="closeModalViewArea">Fechar</span>
+                </div>
+                <div class="box-info-view-area">
+                    <form action="#" method="POST" id="formViewArea" enctype="multipart/form-data">
+                        <input type="number" name="idArea" hidden readonly>
+                        <input type="number" name="idProfessor" hidden readonly>
+                        <div class="input-group" >
+                            <label for="vTipoEstudo">Tipo do estudo:</label>
+                            <input type="text" name="vTipoEstudo" id="vTipoEstudo" readonly>
+                        </div>
+                        <div class="input-group">
+                            <label for="vCategoria">Categoria:</label>
+                            <input type="text" name="vCategoria" id="vCategoria" readonly>
+
+                        </div>
+                        <div class="input-group">
+                            <label for="vDescricao">Descrição:</label>
+                            <div id="vDescricao"></div>
+                        </div>
+                        <input type="submit" value="Solicitar">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/controller/ajax.js"></script>
+    <script src="js/controller/usuario.js"></script>
+    <script src="js/profileScreen.js"></script>
+    <script src="js/modalViewArea.js"></script>
+</body>
+</html>
